@@ -1,1 +1,1 @@
-# http://postolenko.github.io/komfortson/index.html
+# http://postolenko.github.io/komfortson.ru/index.html
