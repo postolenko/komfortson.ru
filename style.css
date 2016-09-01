@@ -629,6 +629,8 @@ a:active {
 }
 
 .nav-box {
+    display: block;
+    width: 100%;
     position: absolute;
     top: -55px;
     left: 0;
@@ -637,6 +639,7 @@ a:active {
 .main-nav {
     background: rgba(122, 28, 39, 1);
     z-index: 3;
+    text-align: center;
 }
 
 .main-nav li {
@@ -742,9 +745,9 @@ a:active {
     background: rgba(180, 24, 44, 1);
 }
 
-/*.main-nav li.action a {
+.main-nav li.action a {
     padding: 12px 43px 12px 44px;
-}*/
+}
 
 
     /*-- Inner Navigation --*/
