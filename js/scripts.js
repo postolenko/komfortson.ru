@@ -131,7 +131,7 @@ $(document).ready(function() {
 
         $(this).css({"display":"none"});
 
-        $(".main-nav li a:eq("+ countItemsMenuFor +")").removeClass("active");
+        $(".main-nav li a").removeClass("active");
 
     });
 
