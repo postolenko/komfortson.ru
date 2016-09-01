@@ -658,10 +658,6 @@ a:active {
     border-left: 1px solid #5e0d17;
 }
 
-.main-nav li a:first-child {
-    border-left: none;
-}
-
 .link-icon-img {
     display: block;
     width: 100%;
@@ -750,7 +746,7 @@ a:active {
 }
 
 .main-nav li.action a {
-    /*padding: 12px 43px 12px 44px;*/
+    padding: 12px 43px 12px 44px;
 }
 
 
