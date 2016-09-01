@@ -637,13 +637,16 @@ a:active {
 }
 
 .main-nav {
+    display: block;
+    width: 100%;
     background: rgba(122, 28, 39, 1);
     z-index: 3;
     text-align: center;
+    display: table;
 }
 
 .main-nav li {
-    display: inline-block;
+    display: table-cell;
     vertical-align: top;
     text-align: center;
     position: relative;
