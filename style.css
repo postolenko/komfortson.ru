@@ -1346,23 +1346,8 @@ h2.promo-form-h:after {
     display: none;
 }
 
-.promo-form-col.right input {
-    display: inline-block;
-    vertical-align: middle;
+.promo-form-col.right select {
     width: 65%;
-    height: 38px;
-    padding: 0 0 0 15px;
-    font-family: "Open Sans", Arial, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 37px;
-    font-weight: normal;
-    color: #000000;
-    border: 1px solid #000000;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    -ms-border-radius: 1px;
-    -o-border-radius: 1px;
-    border-radius: 1px;
 }
 
 .promo-form-col.right p {
