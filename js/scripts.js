@@ -192,76 +192,47 @@ $(document).ready(function() {
     // ---------------------------------------------------------
 
 
-var indexMenuTabItem;
-var dataAttrTab;
-var countItemsTabMenuFor
-// var parentTab;
-// var parentClass;
-var countItemsTabMenu = $(".tab-item a").length - 1;
+    var countItemsTabMenuFor;
+    var countItemsTabMenu = $(".card_tab_link").length - 1;
 
-
-    $(".tab-content").css({"display" : "none"});
-
+    var dataAttrTab;
 
     for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
 
-        if( $(".tab-item a:eq("+ countItemsTabMenuFor +")").hasClass("active") ) {
+            if( $(".card_tab_link:eq("+ countItemsTabMenuFor +")").hasClass("active") ) {
 
-            dataAttrTab = $(".tab-item a:eq("+ countItemsTabMenuFor +")").attr("data-item");
+                dataAttrTab = $(".card_tab_link:eq("+ countItemsTabMenuFor +")").attr("for");
 
-            // parentTab = $(".tab-item a:eq("+ countItemsTabMenuFor +")").parent();
+                for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
 
-            // parentClass = parentTab.attr("class");
+                    console.log(countItemsTabMenuFor);
 
-            for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
+                    if ( $(".card_tab:eq("+ countItemsTabMenuFor +")").attr("id") == dataAttrTab ) {
 
-                if ( $(".tab-content:eq("+ countItemsTabMenuFor +")").attr("data-item") == dataAttrTab ) {
+                        $(".card_tab:eq("+ countItemsTabMenuFor +")").addClass("active");
 
-                    $(".tab-content:eq("+ countItemsTabMenuFor +")").addClass("active");
-
-                    $(".tab-content:eq("+ countItemsTabMenuFor +")").css({"display":"block"});
+                    }
 
                 }
 
             }
 
-        }
-
     }
 
 
+    $(".card_tab_link").click(function() {
 
-    $(".tab-item a").click(function(event) {
+        if( !$(this).hasClass("active") ) {
 
-        event.preventDefault();
+            $(".card_tab").removeClass("active");
 
-        $(".tab-content").css({"display":"none"});
+            $(".card_tab_link").not($(this)).removeClass("active");                             
 
-        indexMenuTabItem = $(".tab-item a").index(this);
-
-        dataAttrTab = $(".tab-item a:eq("+ indexMenuTabItem +")").attr("data-item");
-
-        $(".tab-item a").removeClass("active");
-
-        $(".tab-item a:eq("+ indexMenuTabItem +")").addClass("active");
-
-        $(".tab-content").removeClass("active");
-
-        $(".tab-content").css({"display" : "none"});
-
-        for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
-
-            if ( $(".tab-content:eq("+ countItemsTabMenuFor +")").attr("data-item") == dataAttrTab ) {
-
-                $(".tab-content:eq("+ countItemsTabMenuFor +")").addClass("active");
-
-                $(".tab-content:eq("+ countItemsTabMenuFor +")").css({"display":"block"});
-
-            }
+            $(this).toggleClass("active");
 
         }
 
-    });
+    }); 
 		
 
 });

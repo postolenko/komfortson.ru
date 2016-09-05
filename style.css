@@ -2171,32 +2171,59 @@ button.next-thumbnails {
 
 
 
-    .tabs-items-list {
-        padding: 10px 0 20px 0;
+
+
+    .tabs {
+        position: relative;
+    }    
+
+    .tabs input[type=radio] {
+        opacity: .01;
+        position: absolute;
     }
 
-    .tab-item {
+    .tabs input[type=radio] + .card_tab {
+        display: none;
+        visibility: hidden;
+    }
+
+    .tabs input[type=radio]:checked + .card_tab {
+        display: block;
+        visibility: visible;
+        height: auto;
+    }
+
+    .tabs input[type=radio]:checked + .card_tab.active {
+        display: block;
+    }
+
+    .tabs-content {
+        margin: 20px 0;
+        padding: 45px 0 30px 0;
+        background: rgba(242, 236, 223, 1);
+    }
+
+    .card_tab_link {
         display: inline-block;
         vertical-align: baseline;
-        padding: 0 55px 0 0;
-    }
-
-    .tab-item a {
+        margin: 0 55px 0 0;
+        cursor: pointer;
         font-family: "Open Sans Bold", Arial, Verdana, sans-serif;
         font-size: 18px;
         line-height: 18px;
         font-weight: 700;
         color: #324774;
+        border-bottom:  
     }
 
-    .tab-item a:after {
+    .card_tab_link:after {
         display: block;
         content: "";
         width: 100%;
         border-bottom: 2px solid rgba(50, 71, 116, .5);
     }
 
-    .tab-item a.active {
+    .card_tab_link.active {
         font-family: "Open Sans Bold", Arial, Verdana, sans-serif;
         font-size: 24px;
         line-height: 24px;
@@ -2204,21 +2231,13 @@ button.next-thumbnails {
         color: #342c2a;
     }
 
-    .tab-item a.active:after {
+    .card_tab_link.active:after {
         border-bottom: 2px solid transparent;
     }
 
-    .tabs-content {
-        background: rgba(242, 236, 223, 1);
-    }
-
-    .tab-content {
-        display: block;
-        padding: 40px 0 30px 0;
-    }
-
-    .tab-content.active {
+    .card_tab.active {
         display: block !important;
+        visibility: visible !important;
     }
 
 
