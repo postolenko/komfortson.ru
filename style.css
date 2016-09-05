@@ -197,17 +197,29 @@ img {
 
 select {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     text-indent: 0.01px;
     text-overflow: "";
 }
 
-select::-ms-expand,
+select:focus { outline: none; }
+
+/*select::-ms-expand,
 select::-moz-expand {
     display: none;
+}*/
+
+select::-ms-expand {
+    width: 20px;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 1);
+    color: #b4182c;
 }
 
-&::-ms-expand { display: none; }
 
 input::-webkit-input-placeholder       {opacity: 1; transition: opacity .3s ease;}
 input::-moz-placeholder                {opacity: 1; transition: opacity .3s ease;}
