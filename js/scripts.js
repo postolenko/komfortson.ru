@@ -174,13 +174,17 @@ $(document).ready(function() {
 
     function getCartColumnsHeight() {
 
-        for (countColKartBoxFor = 0; countColKartBoxFor <= countColKartBox; countColKartBoxFor++) {
+        setTimeout(function() {
 
-            colHeightArr.push($(".slider-good-box .col:eq("+ countColKartBoxFor +")").height());
+            for (countColKartBoxFor = 0; countColKartBoxFor <= countColKartBox; countColKartBoxFor++) {
 
-        }
+                colHeightArr.push($(".slider-good-box .col:eq("+ countColKartBoxFor +")").height());
 
-        $(".slider-good-box .col").outerHeight(Math.max.apply(null, colHeightArr));
+            }
+
+            $(".slider-good-box .col").outerHeight(Math.max.apply(null, colHeightArr));
+
+        }, 700);        
 
     }
 
