@@ -5,9 +5,9 @@ $(document).ready(function() {
 
         setTimeout(function() {
 
-            $(".preload-bg").fadeOut(500);
+            $(".preload-bg").fadeOut(700);
 
-        }, 700);
+        }, 800);
   
 
     });
