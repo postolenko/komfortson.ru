@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    //   preload
+
     $(window).on('load', function () {
 
         setTimeout(function() {
