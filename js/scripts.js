@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    //  Preload
 
     $(window).on('load', function () {
 
@@ -51,6 +52,8 @@ $(document).ready(function() {
     $(".circle-content").height($(".circle-content h3").outerHeight(true) + $(".circle-content p").outerHeight(true) + 20);
 
 
+    //  Спрятать скрыть Чекбоксы
+
     $(".show-hide-checkboxes").click(function() {
 
         indexDropdownCheckboxes = $(".show-hide-checkboxes").index(this);
@@ -76,6 +79,8 @@ $(document).ready(function() {
 
 
     // ----------------------------------------------------------------------
+
+    //  Скрипт для Главного Меню
 
     var indexMenuItem;
     var dataAttr;
@@ -151,6 +156,8 @@ $(document).ready(function() {
 
     // -------------------------------------------------
 
+    // Скрипт который выставляет всплывающее окно по центру окна
+
     function getPopupPosition() {
 
         $(".popup-box").css({"top" : ( $(window).height() - $(".popup-box").outerHeight(true) ) / 2 + "px" });
@@ -172,6 +179,8 @@ $(document).ready(function() {
     // var countColKartBoxFor = 0;
     // var colHeightArr = [];
 
+    //  Задать одинаковую высоту колонок
+
     function getCartColumnsHeight() {
 
         setTimeout(function() {
@@ -191,6 +200,8 @@ $(document).ready(function() {
 
     // ---------------------------------------------------------
 
+    //  Для Табов
+    // Определние активного таба при загрузке страницы
 
     var countItemsTabMenuFor;
     var countItemsTabMenu = $(".card_tab_link").length - 1;
@@ -204,8 +215,6 @@ $(document).ready(function() {
                 dataAttrTab = $(".card_tab_link:eq("+ countItemsTabMenuFor +")").attr("for");
 
                 for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
-
-                    console.log(countItemsTabMenuFor);
 
                     if ( $(".card_tab:eq("+ countItemsTabMenuFor +")").attr("id") == dataAttrTab ) {
 
