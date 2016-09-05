@@ -17,6 +17,11 @@ $(document).ready(function() {
     var dropdownCheckboxesHeight;
 
 
+    var countColKartBox = $(".slider-good-box .col").length - 1;
+    var countColKartBoxFor = 0;
+    var colHeightArr = [];
+
+
     $(window).resize(function() {
 
 
@@ -25,6 +30,9 @@ $(document).ready(function() {
         $(".wrapper").css({"padding-bottom" :  $(".footer").outerHeight(true) + "px"});
 
 
+        getPopupPosition();
+
+        getCartColumnsHeight();
 
     });
 
@@ -32,6 +40,11 @@ $(document).ready(function() {
     $(".wrapper").css({"min-height" : $(window).height() + "px"});
 
     $(".wrapper").css({"padding-bottom" :  $(".footer").outerHeight(true) + "px"});
+
+
+    getPopupPosition();
+
+    getCartColumnsHeight();
 
 
 
@@ -136,8 +149,115 @@ $(document).ready(function() {
     });
 
 
+    // -------------------------------------------------
+
+    function getPopupPosition() {
+
+        $(".popup-box").css({"top" : ( $(window).height() - $(".popup-box").outerHeight(true) ) / 2 + "px" });
+
+    }
 
 
+    $(".popup-bg, .popup-box button").click(function() {
+
+        $(".popup-section").fadeOut(300);
+
+    });
+
+
+    // ------------------------------------------------------
+
+
+    // var countColKartBox = $(".slider-good-box .col").length - 1;
+    // var countColKartBoxFor = 0;
+    // var colHeightArr = [];
+
+    function getCartColumnsHeight() {
+
+        for (countColKartBoxFor = 0; countColKartBoxFor <= countColKartBox; countColKartBoxFor++) {
+
+            colHeightArr.push($(".slider-good-box .col:eq("+ countColKartBoxFor +")").height());
+
+        }
+
+        $(".slider-good-box .col").outerHeight(Math.max.apply(null, colHeightArr));
+
+    }
+
+
+    // ---------------------------------------------------------
+
+
+var indexMenuTabItem;
+var dataAttrTab;
+var countItemsTabMenuFor
+// var parentTab;
+// var parentClass;
+var countItemsTabMenu = $(".tab-item a").length - 1;
+
+
+    $(".tab-content").css({"display" : "none"});
+
+
+    for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
+
+        if( $(".tab-item a:eq("+ countItemsTabMenuFor +")").hasClass("active") ) {
+
+            dataAttrTab = $(".tab-item a:eq("+ countItemsTabMenuFor +")").attr("data-item");
+
+            // parentTab = $(".tab-item a:eq("+ countItemsTabMenuFor +")").parent();
+
+            // parentClass = parentTab.attr("class");
+
+            for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
+
+                if ( $(".tab-content:eq("+ countItemsTabMenuFor +")").attr("data-item") == dataAttrTab ) {
+
+                    $(".tab-content:eq("+ countItemsTabMenuFor +")").addClass("active");
+
+                    $(".tab-content:eq("+ countItemsTabMenuFor +")").css({"display":"block"});
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    $(".tab-item a").click(function(event) {
+
+        event.preventDefault();
+
+        $(".tab-content").css({"display":"none"});
+
+        indexMenuTabItem = $(".tab-item a").index(this);
+
+        dataAttrTab = $(".tab-item a:eq("+ indexMenuTabItem +")").attr("data-item");
+
+        $(".tab-item a").removeClass("active");
+
+        $(".tab-item a:eq("+ indexMenuTabItem +")").addClass("active");
+
+        $(".tab-content").removeClass("active");
+
+        $(".tab-content").css({"display" : "none"});
+
+        for (countItemsTabMenuFor = 0; countItemsTabMenuFor <= countItemsTabMenu; countItemsTabMenuFor++) {
+
+            if ( $(".tab-content:eq("+ countItemsTabMenuFor +")").attr("data-item") == dataAttrTab ) {
+
+                $(".tab-content:eq("+ countItemsTabMenuFor +")").addClass("active");
+
+                $(".tab-content:eq("+ countItemsTabMenuFor +")").css({"display":"block"});
+
+            }
+
+        }
+
+    });
 		
 
 });
